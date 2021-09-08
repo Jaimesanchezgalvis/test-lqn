@@ -1,0 +1,10 @@
+pruebas a la aplicacion
+
+1. Enzyme
+2. Enzyme to Json
+3. debe de mostrar el componente correctamente
+*shallow
+*wrapper
+*wrapper .to MatchSnapshop()
+
+seccion 88
