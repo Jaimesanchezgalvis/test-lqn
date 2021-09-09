@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { getPople } from '../../helpers/getPople';
 import { GridPeople } from './GridPeople';
 
 export const People = () => {
@@ -6,25 +7,9 @@ export const People = () => {
     const [images, setImages] = useState([])
 
     useEffect(() => {
-        info();
+    getPople()
+    .then( data => setImages(data)   )
     }, [])
-
-    const info = async () => {
-        const url = 'https://swapi.dev/api/people/'
-        const resp = await fetch(url);
-        const { results } = await resp.json();
-        const people = results.map(data => {
-            return {
-                name: data.name,
-                birth_year: data.birth_year,
-                created: data.created,
-                edited: data.edited,
-                eye_color: data.eye_color,
-                id: data.id
-            }
-        })
-        setImages(people)
-    }
 
     return (
         <div className="container card-grid">
