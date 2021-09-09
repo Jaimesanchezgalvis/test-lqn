@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const GridFilms = ({ title, producer, created, edited, opening_crawl}) => {
 
@@ -9,6 +10,10 @@ export const GridFilms = ({ title, producer, created, edited, opening_crawl}) =>
             <p>Created: {created}</p>
             <p>Edited: {edited}</p>
             <p>Opening Crawl: {opening_crawl}</p>
+            <Link to={`./films/${title}`}
+            >
+                More info
+            </Link>
         </div>
     )
 }

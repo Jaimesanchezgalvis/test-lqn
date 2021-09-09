@@ -12,6 +12,7 @@ import { Species } from '../components/species/Species';
 import { Startships } from '../components/startships/Startships';
 import { Vehicles } from '../components/vehicles/Vehicles';
 import { GetPeopleByName } from '../components/people/GetPeopleByName';
+import { GetFilmByTitle } from '../components/films/GetFilmByTitle';
 
 
 export const AppRouter = () => {
@@ -21,6 +22,7 @@ export const AppRouter = () => {
         <Navbar />
             <Switch>
                     <Route exact path="/films" component={Films} />
+                    <Route exact path="/films/:id" component={GetFilmByTitle} />
                     <Route exact path="/people" component={People} />
                     <Route exact path="/people/:id" component={GetPeopleByName} />
                     <Route exact path="/planets" component={Planets} />
