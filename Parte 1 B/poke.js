@@ -1,23 +1,8 @@
-/**
- * Find the letter the word ends on
- * @param {string} word
- * @returns {string}
- */
+
 const endsWith = word => word[word.length - 1];
 
-/**
- * Remove the used elements from the candidate elements
- * @param {Array<string>} words Candidate words
- * @param {Array<string>} used Used words
- * @returns {*}
- */
 const getCandidates = (words, used) => words.filter(e => !used.includes(e));
 
-/**
- * Build a map of letters to words that start with that letter
- * @param {Array<string>} words
- * @returns {Map<string, Array<string>>}
- */
 const buildLookup = words => {
     const lookup = new Map();
     words.forEach(e => {
@@ -27,13 +12,7 @@ const buildLookup = words => {
     return lookup;
 };
 
-
-/**
- * Main function
- * @param {Array<string>} names
- */
 const findPaths = names => {
-    const t0 = process.hrtime();
     console.log('Checking:', names.length, 'names');
     const lookup = buildLookup(names);
 
@@ -64,15 +43,14 @@ const findPaths = names => {
         parseResult(res);
     });
 
-    const t1 = process.hrtime(t0);
-    console.info('Execution time (hr): %ds %dms', t1[0], t1[1] / 1000000);
     console.log('Max Path:', maxNum);
     console.log('Matching Paths:', maxPaths.length);
     console.log('Example Path:', maxPaths[0]);
-
+    
 };
 
-const pokemonList  = ["audino", "bagon", "baltoy", "banette",
+
+const poke = ["audino", "bagon", "baltoy", "banette",
     "bidoof", "braviary", "bronzor", "carracosta", "charmeleon",
     "cresselia", "croagunk", "darmanitan", "deino", "emboar",
     "emolga", "exeggcute", "gabite", "girafarig", "gulpin",
@@ -87,5 +65,5 @@ const pokemonList  = ["audino", "bagon", "baltoy", "banette",
     "trapinch", "treecko", "tyrogue", "vigoroth", "vulpix",
     "wailord", "wartortle", "whismur", "wingull", "yamask"];
 
-    
-Paths(pokimon);
+findPaths(poke);
+

@@ -13,6 +13,7 @@ import { Startships } from '../components/startships/Startships';
 import { Vehicles } from '../components/vehicles/Vehicles';
 import { GetPeopleByName } from '../components/people/GetPeopleByName';
 
+
 export const AppRouter = () => {
     return (
         <Router>
@@ -26,7 +27,7 @@ export const AppRouter = () => {
                     <Route exact path="/species" component={Species} />
                     <Route exact path="/startships" component={Startships} />
                     <Route exact path="/vehicles" component={Vehicles} />
-                    {/* <Redirect path="/" component={People} /> */}
+                    <Route path="/" component={People} />
             </Switch>
 </>
             </Router>
