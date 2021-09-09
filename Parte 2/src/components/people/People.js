@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { getPople } from '../../helpers/getPople';
+import React from 'react'
+import { useFetchPeople } from '../../hooks/useFetchPeople';
 import { GridPeople } from './GridPeople';
 
 export const People = () => {
 
-    const [images, setImages] = useState([])
-
-    useEffect(() => {
-    getPople()
-    .then( data => setImages(data)   )
-    }, [])
-
+    const { data, loading } = useFetchPeople();
+ 
     return (
         <div className="container card-grid">
+            {loading && <p>Loading...</p> }
                 {
-                    images.map(data => (
+                    data.map(data => (
                         <GridPeople
                             key={data.name}
                             {...data} />

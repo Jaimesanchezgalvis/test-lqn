@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router'
-import { getPople } from '../../helpers/getPople';
+import { useFetchPeople } from '../../hooks/useFetchPeople';
 import { PeopleCard } from './PeopleCard';
 
 export const GetPeopleByName = () => {
 
     const { id } = useParams();
-    const [images, setImages] = useState([]);
 
-    useEffect(() => {
-        getPople()
-            .then(data => setImages(data))
-    }, [])
+    const { data, loading } = useFetchPeople();
 
     const name = id.toLocaleLowerCase();
-    const resultado = images && images.filter(hero => hero.name.toLocaleLowerCase().includes(name))
-
+    const resultado = data && data.filter(hero => hero.name.toLocaleLowerCase().includes(name))
 
     return (
         <div className="container">
+            {loading && <p>Loading...</p>}
             {
                 resultado && resultado.map(data => (
                     <PeopleCard
