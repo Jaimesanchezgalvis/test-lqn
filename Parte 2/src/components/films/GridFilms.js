@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const GridFilms = ({ title, producer, created, edited, opening_crawl}) => {
 
     return (
-        <div className="card-body m-2">
+        <div className="card-body m-2 animate__animated animate__zoomIn">
             <h4>Title: {title}</h4>
             <p>Producer: {producer}</p>
             <p>Created: {created}</p>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory  } from 'react-router-dom'
 
-export const PeopleCard = ({
+export const PlanetCard = ({
     birth_year,
     name,
     created,
@@ -15,7 +15,7 @@ export const PeopleCard = ({
 }) => {
     const history = useHistory();
     return (
-        <div className="card border-dark mb-3 mt-3 animate__animated animate__zoomIn" >
+        <div className="card border-dark mb-3 mt-3 " >
             <div className="card-header">Name: {name}</div>
             <div className="card-body text-dark">
                 <h5 className="card-title">Name: {name}</h5>

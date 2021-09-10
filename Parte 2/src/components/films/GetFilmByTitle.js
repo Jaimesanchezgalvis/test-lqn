@@ -14,7 +14,7 @@ export const GetFilmByTitle = () => {
     const resultado = data && data.filter(dat => dat.title.toLocaleLowerCase().includes(title))
 
     return (
-        <div className="container">
+        <div className="container animate__animated animate__zoomIn">
             {loading && <p>Loading...</p>}
             {
                 resultado && resultado.map(data => (

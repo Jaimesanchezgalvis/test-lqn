@@ -7,7 +7,7 @@ export const People = () => {
     const { data, loading } = useFetchPeople();
  
     return (
-        <div className="container card-grid">
+        <div className="container card-grid animate__animated animate__zoomIn">
             {loading && <p>Loading...</p> }
                 {
                     data.map(data => (

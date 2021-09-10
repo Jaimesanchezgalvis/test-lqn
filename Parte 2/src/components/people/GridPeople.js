@@ -5,7 +5,7 @@ export const GridPeople = ({ birth_year, name, created, edited, eye_color, id}) 
   
     
     return (
-        <div className="card-body m-2">
+        <div className="card-body m-2 animate__animated animate__zoomIn">
             <h4>Name: {name}</h4>
             <p>Birth Year: {birth_year}</p>
             <p>Created: {created}</p>

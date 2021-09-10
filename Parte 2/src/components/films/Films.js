@@ -1,36 +1,14 @@
 import React from 'react'
 import { useFetchFilms } from '../../hooks/useFetchFilms';
 import { GridFilms } from './GridFilms';
+import "animate.css"
 
 export const Films = () => {
 
     const { data, loading } = useFetchFilms();
 
-    // const [images, setImages] = useState([])
-
-    // useEffect(() => {
-    //     info();
-    // }, [])
-
-
-    // const info = async () => {
-    //     const url = 'https://swapi.dev/api/films/'
-    //     const resp = await fetch(url);
-    //     const { results } = await resp.json();
-
-    //     const films = results.map(data => {
-    //         return {
-    //             title: data.title,
-    //             producer: data.producer,
-    //             created: data.created,
-    //             opening_crawl: data.opening_crawl,
-    //         }
-    //     })
-    //     setImages(films)
-    // }
-
     return (
-        <div className="container card-grid">
+        <div className="container card-grid animate__animated animate__zoomIn">
             {loading && <p>Loading...</p>}
             {
                 data.map(data => (

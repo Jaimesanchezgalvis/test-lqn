@@ -20,10 +20,10 @@ id,
 }) => {
     const history = useHistory();
     return (
-        <div className="card border-dark mb-3 mt-3 " >
+        <div className="card border-dark mb-3 mt-3 animate__animated animate__zoomIn" >
             <div className="card-header">Name: {title}</div>
             <div className="card-body text-dark">
-                <h5 className="card-title">Name: {title}</h5>
+                <h5 className="card-title">Title: {title}</h5>
                 <p className="card-text">
                     Episode: {episode_id} <br />
                     Opening crawl: {opening_crawl} <br />

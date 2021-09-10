@@ -1,23 +1,21 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import { useFetchPeople } from '../../hooks/useFetchPeople';
-import { PeopleCard } from './PeopleCard';
+import { useFetchPlanet } from '../../hooks/useFetchPlanet';
+import { PlanetCard } from './PlanetCard';
 
-export const GetPeopleByName = () => {
+export const GetPlanetByName = () => {
 
     const { id } = useParams();
-
-    const { data, loading } = useFetchPeople();
-
+    const { data, loading } = useFetchPlanet();
     const name = id.toLocaleLowerCase();
-    const resultado = data && data.filter(hero => hero.name.toLocaleLowerCase().includes(name))
+    const resultado = data && data.filter(planet => planet.name.toLocaleLowerCase().includes(name))
 
     return (
-        <div className="container animate__animated animate__zoomIn">
+        <div className="container">
             {loading && <p>Loading...</p>}
             {
                 resultado && resultado.map(data => (
-                    <PeopleCard
+                    <PlanetCard
                         key={data.name}
                         {...data} />
                 ))
